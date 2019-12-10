@@ -8,25 +8,23 @@ fun decimalToRoman(number: Int): String = (
         `|` replace("VV"    , "X")
         `|` replace("XXXXX" , "L")
         `|` replace("LL"    , "C")
-        `|` replace("CCCCC" , "L")
+        `|` replace("CCCCC" , "D")
         `|` replace("DD"    , "M")
 
+        `|` replace("DCCCC" , "CM")
+        `|` replace("CCCC" , "CD")
+        `|` replace("LXXXX"  , "XC")
         `|` replace("XXXX"  , "XL")
         `|` replace("VIIII" , "IX")
         `|` replace("IIII"  , "IV")
 
-
     )(number)
 
-
 fun replicate(symbol: String): (Int) -> String =
-    { number: Int -> number.replicate(symbol) }
+    { number: Int -> IntRange(1, number).map { n -> symbol }.joinToString(separator = "") }
 
 fun replace(toBeReplaced: String, replacement: String) =
     { s: String -> s.replace(toBeReplaced, replacement) }
-
-private fun Int.replicate(symbol: String): String =
-    IntRange(1, this).map { n -> symbol }.joinToString(separator = "")
 
 
 
