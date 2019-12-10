@@ -14,14 +14,13 @@ class RomanNumeralsKtTest {
         replicate("I")(4) shouldBe "IIII"
     }
 
-
     @Test
-    fun `decimal to roman`() {
+    fun `decimal 26 to roman 26`() {
         decimalToRoman(26) shouldBe "XXVI"
     }
 
     @Test
-    fun `decimal to roman 49`() {
+    fun `decimal 49 to roman `() {
         decimalToRoman(49) shouldBe "XLIX"
     }
 }
